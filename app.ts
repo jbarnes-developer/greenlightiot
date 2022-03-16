@@ -20,3 +20,4 @@ module.exports = app
 import { Server } from "./src/Server";
 
 const server = new Server();
+module.exports = server.app;
