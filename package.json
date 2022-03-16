@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "dist/app.js",
   "scripts": {
-    "prestart": "rm -rf dist && tsc",
+    "prestart": "del -rf dist && tsc",
     "start": "node dist/app.js"
   },
   "author": "GreenlightIoT",
