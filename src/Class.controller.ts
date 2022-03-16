@@ -35,7 +35,11 @@ export class ClassController implements IController {
         try {
             const myClass = ClassModel.Create(request.body.name, new Date(request.body.startDate));
             response.status(201);
-            response.send(<Class>myClass);
+            response.json({
+                name: myClass.name,
+                startDate: myClass.startDate,
+                students: myClass.students
+            });
         }
         catch(err: any) {
             response.status(500);
@@ -57,7 +61,11 @@ export class ClassController implements IController {
         try {
             const myClass = ClassModel.Find_ByName(request.params.name);
             response.status(200);
-            response.json(<Class>myClass);
+            response.json({
+                name: myClass.name,
+                startDate: myClass.startDate,
+                students: myClass.students
+            });
         }
         catch(err: any) {
             response.status(404);
